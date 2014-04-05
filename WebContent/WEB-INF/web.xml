@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<servlet>
+		<servlet-name>Snoop Servlet</servlet-name>
+		<servlet-class>com.lc.accountbook.serverlet.SnoopServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Login Servlet</servlet-name>
+		<servlet-class>com.lc.accountbook.serverlet.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Snoop Servlet</servlet-name>
+		<url-pattern>/do.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Login Servlet</servlet-name>
+		<url-pattern>/home.do</url-pattern>
+	</servlet-mapping>
+
+</web-app>

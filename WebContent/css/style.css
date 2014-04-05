@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+
+html,body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: '\5FAE\8F6F\96C5\9ED1', '\534E\6587\7EC6\9ED1', 'Helvetica Neue',
+		Helvetica, Arial, sans-serif;
+	background: #eaeaea url('img/bg.png');
+	/*color: #4d4d4d;*/
+	/*width: 650px;*/
+	margin: 70px auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+#index_login {
+	width: 60%;
+}
+#two_main_button {
+	width:90%;
+}
+#in_button_div {
+	width:50%;
+}
+#out_button_div {
+	width:50%;
+}
