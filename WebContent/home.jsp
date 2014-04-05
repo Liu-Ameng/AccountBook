@@ -19,8 +19,14 @@
 
 	<div class="container" id="body">
 		<div id="two_main_button">
-			<div id="in_button_div">A</div>
-			<div id="out_button_div">B</div>
+			<div class="big_button_div ">
+				<button type="button" class="btn btn-success btn-xlarge btn-block">
+					One income</button>
+			</div>
+			<div class="big_button_div ">
+				<button type="button" class="btn btn-warning btn-xlarge btn-block">
+					One expense</button>
+			</div>
 		</div>
 	</div>
 

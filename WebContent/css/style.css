@@ -22,12 +22,22 @@ body {
 #index_login {
 	width: 60%;
 }
+
 #two_main_button {
-	width:90%;
+	width: 90%;
 }
-#in_button_div {
-	width:50%;
+
+.btn-xlarge {
+	padding: 18px 28px;
+	font-size: 28px;
+	line-height: normal;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
 }
-#out_button_div {
-	width:50%;
+
+.big_button_div {
+	width: 40%;
+	float: left;
+	padding: 20px;
 }
