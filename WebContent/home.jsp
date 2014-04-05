@@ -13,6 +13,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link rel="shortcut icon" href="img/money.png">
 </head>
 <body>
 	<%@ include file="header.jsp"%>
