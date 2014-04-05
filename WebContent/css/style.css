@@ -11,7 +11,8 @@ body {
 	background: #eaeaea url('img/bg.png');
 	/*color: #4d4d4d;*/
 	/*width: 650px;*/
-	margin: 70px auto;
+	/*margin: 70px auto;*/
+	padding-bottom: 70px;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	-ms-font-smoothing: antialiased;
