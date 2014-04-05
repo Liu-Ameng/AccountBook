@@ -10,26 +10,10 @@
 <meta name="author" content="">
 <title>Your Account Book</title>
 
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.css" rel="stylesheet">
-
-<!-- Just for debugging purposes. Don't actually copy this line! -->
-<!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
-<![endif]-->
-<link
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
-	rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link href="css/ref.css" rel="stylesheet">
-<link rel="shortcut icon" href="img/money.png">
+<%@ include file="LINKS.jsp"%>
 </head>
 <body>
-	<%@ include file="header.jsp"%>
+	<%@ include file="NAV.jsp"%>
 	<!-- Carousel
     ================================================== -->
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -61,19 +45,31 @@
 				</div>
 			</div>
 			<div class="item">
-				<img
-					data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide"
-					alt="Second slide">
+				<img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:NEW INCOME"
+					alt="New income slide">
 				<div class="container">
 					<div class="carousel-caption">
-						<h1>Another example headline.</h1>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-							dolor id nibh ultricies vehicula ut id elit.</p>
-						<p>
-							<a class="btn btn-lg btn-primary" href="#" role="button">Learn
-								more</a>
-						</p>
+						<h1>Congratulation for earning some money!</h1>
+
+						<form role="form">
+							<div class="form-group">
+								<label for="exampleInputEmail1">Who</label>
+								<input type="text" class="form-control" id="exampleInputEmail1"
+									name="person_name"
+									placeholder="Who is(are) involved. Use '&' to split persons.">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword1">Password</label>
+								<input type="password" class="form-control"
+									id="exampleInputPassword1" placeholder="Password">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword1">Password</label>
+								<input type="datetime" class="form-control"
+									id="exampleInputPassword1" placeholder="Password">
+							</div>
+							<button type="submit" class="btn btn-lg btn-primary">Submit</button>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -109,7 +105,7 @@
 	</div>
 	<div class="contatiner">
 		<div class="row">
-			<div class="col-md-1"> </div>
+			<div class="col-md-1"></div>
 			<div class="col-md-5">
 				<button type="button" class="btn btn-success btn-xlarge btn-block">
 					<i class="glyphicon glyphicon-plus"></i> One income
@@ -117,9 +113,10 @@
 			</div>
 			<div class="col-md-5">
 				<button type="button" class="btn btn-warning btn-xlarge btn-block">
-					<i class="glyphicon glyphicon-minus"></i> One expense</button>
+					<i class="glyphicon glyphicon-minus"></i> One expense
+				</button>
 			</div>
-			<div class="col-md-1"> </div>
+			<div class="col-md-1"></div>
 		</div>
 	</div>
 	<!-- Bootstrap core JavaScript

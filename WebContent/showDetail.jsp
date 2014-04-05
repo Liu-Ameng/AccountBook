@@ -8,12 +8,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Detail Account</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+
+<%@ include file="LINKS.jsp"%>
 </head>
 <body>
-	<%@ include file="header.jsp"%>
+	<%@ include file="NAV.jsp"%>
 
 	<div class="container">
 		<table class="table table-hover">
@@ -40,6 +39,8 @@
 			%>
 		</table>
 	</div>
-
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 </body>
 </html>
