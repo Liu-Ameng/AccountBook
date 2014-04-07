@@ -432,7 +432,7 @@
   }
 
   $.fn.carousel.defaults = {
-    interval: 15000
+    interval: 45000 //carousel slowly -add by liuche
   , pause: 'hover'
   }
 

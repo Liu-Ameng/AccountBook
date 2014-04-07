@@ -11,6 +11,7 @@
 <title>Your Account Book</title>
 
 <%@ include file="LINKS.jsp"%>
+<link href="css/bootstrap-datetimepicker.css" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="NAV.jsp"%>
@@ -45,29 +46,59 @@
 				</div>
 			</div>
 			<div class="item">
-				<img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:NEW INCOME"
-					alt="New income slide">
+				<!--           输入数据页面                                   -->
+				<img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:NEW BILL"
+					alt="NEW BILL slide">
 				<div class="container">
 					<div class="carousel-caption">
-						<h1>Congratulation for earning some money!</h1>
+						<h1>NEW BILL</h1>
 
-						<form role="form">
-							<div class="form-group">
-								<label for="exampleInputEmail1">Who</label>
-								<input type="text" class="form-control" id="exampleInputEmail1"
-									name="person_name"
-									placeholder="Who is(are) involved. Use '&' to split persons.">
+						<form role="form" action="submit.do" method="post">
+							<div class="contatiner">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="exampleInputEmail1">What</label>
+											<input type="text" class="form-control"
+												id="titleInput" name="title_name"
+												placeholder="Descripe the bill">
+										</div>
+										<div class="form-group">
+											<label for="exampleInputEmail1">Who</label>
+											<input type="text" class="form-control"
+												id="personInput" name="person_name"
+												placeholder="Who is(are) involved. Use '&' to split persons.">
+										</div>
+										<div class="form-group">
+											<label for="text2">Where</label>
+											<input type="text" class="form-control" id="placeInput" name="place_name"
+												placeholder="Where it happens?">
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="datePicker1">When</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i
+													class="glyphicon glyphicon-calendar"></i></span>
+												<input size="16" type="text" value="2012-06-15 14:45"
+													readonly class="form-control form_datetime">
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="text2">How much</label>
+											<div class="input-group">
+												<span class="input-group-addon">$</span>
+												<input type="text" class="form-control"
+													placeholder="The Money">
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="form-group">
-								<label for="exampleInputPassword1">Password</label>
-								<input type="password" class="form-control"
-									id="exampleInputPassword1" placeholder="Password">
-							</div>
-							<div class="form-group">
-								<label for="exampleInputPassword1">Password</label>
-								<input type="datetime" class="form-control"
-									id="exampleInputPassword1" placeholder="Password">
-							</div>
+
 							<button type="submit" class="btn btn-lg btn-primary">Submit</button>
 						</form>
 					</div>
@@ -97,12 +128,6 @@
 	</div>
 	<!-- /.carousel -->
 
-	<div class="container" id="body">
-		<div id="two_main_button">
-			<div class="big_button_div "></div>
-			<div class="big_button_div "></div>
-		</div>
-	</div>
 	<div class="contatiner">
 		<div class="row">
 			<div class="col-md-1"></div>
@@ -125,6 +150,12 @@
 	<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="http://cdn.bootcss.com/holder/2.0/holder.min.js"></script>
+	<script src="js/bootstrap-datetimepicker.js"></script>
 
+	<script type="text/javascript">
+		$(".form_datetime").datetimepicker({
+			format : "yyyy-mm-dd   hh:ii"
+		});
+	</script>
 </body>
 </html>
