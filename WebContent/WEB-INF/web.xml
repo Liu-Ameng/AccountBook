@@ -3,21 +3,33 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
+
 	<servlet>
 		<servlet-name>Snoop Servlet</servlet-name>
 		<servlet-class>com.lc.accountbook.serverlet.SnoopServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>Login Servlet</servlet-name>
-		<servlet-class>com.lc.accountbook.serverlet.LoginServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Snoop Servlet</servlet-name>
 		<url-pattern>/do.do</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Login Servlet</servlet-name>
+		<servlet-class>com.lc.accountbook.serverlet.LoginServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>Login Servlet</servlet-name>
 		<url-pattern>/home.do</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Submit Servlet</servlet-name>
+		<servlet-class>com.lc.accountbook.serverlet.SubmitServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Submit Servlet</servlet-name>
+		<url-pattern>/submit.do</url-pattern>
+	</servlet-mapping>
+
 
 </web-app>

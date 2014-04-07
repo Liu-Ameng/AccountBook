@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.lc.accountbook.data.Database;
 import com.lc.accountbook.data.User;
+import com.lc.accountbook.utility.GV;
 
 public class LoginServlet extends HttpServlet {
 
@@ -28,12 +29,13 @@ public class LoginServlet extends HttpServlet {
 		String userPassword = (String) req.getParameter("password");
 		if (Database.checkUserLogin(new User(userName, userPassword))) {
 			//req.setAttribute("login_result", "true");
-			req.getSession().setAttribute("logined", "true");
-			res.sendRedirect("home.jsp");
+			req.getSession().setAttribute(GV.SESSION_HAS_LOGIN, "true");
+			req.getSession().setAttribute(GV.SESSION_USER_NAME, userName);
+			res.sendRedirect(GV.URL_HOME);
 		} else {
 			//req.setAttribute("login_result", "false");
-			req.getSession().setAttribute("logined", "false");
-			res.sendRedirect("index.jsp");
+			req.getSession().setAttribute(GV.SESSION_HAS_LOGIN, "false");
+			res.sendRedirect(GV.URL_INDEX);
 		}
 	}
 

@@ -17,9 +17,9 @@
 	<div class="container">
 		<table class="table table-hover">
 			<tr>
-				<th>#</th>
 				<th>Time</th>
 				<th>Title</th>
+				<th>Account</th>
 				<th>Money</th>
 			</tr>
 			<%
@@ -30,9 +30,9 @@
 					} else {
 						out.println("<tr class=\"warning\">");
 					}
-					out.println("<td>" + account.getId() + "</td>");
 					out.println("<td>" + account.getDatetime().toString() + "</td>");
 					out.println("<td>" + account.getTitle() + "</td>");
+					out.println("<td>" + account.getPersonInOneString() + "</td>");
 					out.println("<td>" + account.getPrice() + "</td>");
 					out.println("</tr>");
 				}

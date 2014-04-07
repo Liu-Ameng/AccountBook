@@ -1,10 +1,15 @@
 
+<%@page import="com.lc.accountbook.data.Database"%>
+<%@page import="com.lc.accountbook.utility.GV"%>
 <%
 	//Check seesion;
-	String loginResult = (String) session.getAttribute("logined");
+	String loginResult = (String) session.getAttribute(GV.SESSION_HAS_LOGIN);
 	if (loginResult == null || loginResult.equals("true") == false) {
-		response.sendRedirect("index.jsp");
+		response.sendRedirect(GV.URL_INDEX);
 	}
+	String userName = (String) session.getAttribute(GV.SESSION_USER_NAME);
+	Database.setCurrentUser(userName);
+	
 %>
 <div class="navbar-wrapper">
 	<div class="container">
@@ -21,7 +26,7 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
+						<li class="active"><a href="home.jsp">Home</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"> Detail <b class="caret"></b>
 						</a>

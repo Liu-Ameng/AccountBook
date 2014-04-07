@@ -12,6 +12,7 @@
 
 <%@ include file="LINKS.jsp"%>
 <link href="css/bootstrap-datetimepicker.css" rel="stylesheet">
+<link href="css/home.css" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="NAV.jsp"%>
@@ -59,20 +60,19 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label for="exampleInputEmail1">What</label>
-											<input type="text" class="form-control"
-												id="titleInput" name="title_name"
-												placeholder="Descripe the bill">
+											<input type="text" class="form-control" id="titleInput"
+												name="title_name" placeholder="Descripe the bill">
 										</div>
 										<div class="form-group">
 											<label for="exampleInputEmail1">Who</label>
-											<input type="text" class="form-control"
-												id="personInput" name="person_name"
+											<input type="text" class="form-control" id="personInput"
+												name="person_name"
 												placeholder="Who is(are) involved. Use '&' to split persons.">
 										</div>
 										<div class="form-group">
 											<label for="text2">Where</label>
-											<input type="text" class="form-control" id="placeInput" name="place_name"
-												placeholder="Where it happens?">
+											<input type="text" class="form-control" id="placeInput"
+												name="place_name" placeholder="Where it happens?">
 										</div>
 									</div>
 
@@ -82,8 +82,8 @@
 											<div class="input-group">
 												<span class="input-group-addon"><i
 													class="glyphicon glyphicon-calendar"></i></span>
-												<input size="16" type="text" value="2012-06-15 14:45"
-													readonly class="form-control form_datetime">
+												<input type="text" class="form-control form_datetime"
+													name="datetime" size="16" value="2014-01-01 16:30:00" readonly>
 											</div>
 										</div>
 
@@ -91,7 +91,7 @@
 											<label for="text2">How much</label>
 											<div class="input-group">
 												<span class="input-group-addon">$</span>
-												<input type="text" class="form-control"
+												<input type="text" class="form-control" name="price"
 													placeholder="The Money">
 											</div>
 										</div>
@@ -154,7 +154,7 @@
 
 	<script type="text/javascript">
 		$(".form_datetime").datetimepicker({
-			format : "yyyy-mm-dd   hh:ii"
+			format : "yyyy-mm-dd hh:ii:ss"
 		});
 	</script>
 </body>

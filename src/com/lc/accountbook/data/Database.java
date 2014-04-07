@@ -17,6 +17,10 @@ public class Database {
 
 	static User currentUser = null;
 
+	public static void setCurrentUser(String userName) {
+		currentUser = new User(userName, "");
+	}
+
 	/**
 	 * check user's identity by query database
 	 * 
@@ -69,7 +73,7 @@ public class Database {
 	}
 
 	public static List<AccountBook> getAccountBooks(String whereCondition) {
-		if(currentUser==null)
+		if (currentUser == null)
 			return null;
 		Connection connection = null;
 		Statement statement = null;
@@ -80,18 +84,22 @@ public class Database {
 			connection = DriverManager
 					.getConnection(DB_URL, DB_USER, DB_PASSWD);
 			statement = connection.createStatement();
-			String sql = "select * from "+currentUser.getUserAccountTableName();
-			if(whereCondition!=null){
-				sql += " where "+whereCondition;
+			String sql = "select * from "
+					+ currentUser.getUserAccountTableName();
+			if (whereCondition != null) {
+				sql += " where " + whereCondition;
 			}
 			ResultSet result = statement.executeQuery(sql);
 			while (result.next()) {
 				int id = result.getInt("id");
-				Date datetime = result.getDate("datetime");
+				Timestamp datetime = result.getTimestamp("datetime");
 				String title = result.getString("title");
 				String[] persons = result.getString("person").split("&");
 				float price = result.getFloat("price");
-				list.add(new AccountBook(id, title, datetime, price, persons));
+				String place = result.getString("place");
+				String comment = result.getString("comment");
+				list.add(new AccountBook(id, title, datetime, price, place,
+						persons, comment));
 			}
 			result.close();
 			statement.close();
@@ -117,5 +125,45 @@ public class Database {
 			}
 		}
 		return list;
+	}
+
+	public static int insertOneBillToTable(AccountBook bill) {
+		if (currentUser == null)
+			return -1;
+		Connection connection = null;
+		PreparedStatement statement = null;
+		int ret = -1;
+		try {
+			Class.forName(JDBC_DRIVER);
+			// System.out.println("connecting...");
+			connection = DriverManager
+					.getConnection(DB_URL, DB_USER, DB_PASSWD);
+			String sql = "INSERT INTO " + currentUser.getUserAccountTableName()
+					+ " " + bill.getInsertSQL() + ";";
+			statement = connection.prepareStatement(sql);
+			ret = statement.executeUpdate();
+			statement.close();
+			connection.close();
+		} catch (SQLException sq) {
+			sq.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (statement != null) {
+					statement.close();
+				}
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
+		}
+		return ret;
 	}
 }
